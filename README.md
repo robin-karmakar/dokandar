@@ -177,17 +177,23 @@ lib/
 
 ## 📸 Screenshots
 
-| Login | Dashboard | Products |
-|---|---|---|
-| ![Login](screenshots/login.png) | ![Dashboard](screenshots/dashboard.png) | ![Products](screenshots/products.png) |
+| Login                           | Sign Up                            | Dashboard                               |
+| ------------------------------- | ---------------------------------- | --------------------------------------- |
+| ![Login](screenshots/login.png) | ![Sign Up](screenshots/signup.png) | ![Dashboard](screenshots/dashboard.png) |
 
-| New Sale / POS | Barcode Scanner | Receipt |
-|---|---|---|
-| ![New Sale](screenshots/new_sale.png) | ![Scanner](screenshots/scanner.png) | ![Receipt](screenshots/receipt.png) |
+| Products                              | Edit Product                                  | New Sale / POS                        |
+| ------------------------------------- | --------------------------------------------- | ------------------------------------- |
+| ![Products](screenshots/products.png) | ![Edit Product](screenshots/edit_product.png) | ![New Sale](screenshots/new_sale.png) |
 
-| Sales History | Profile |
-|---|---|
-| ![History](screenshots/history.png) | ![Profile](screenshots/profile.png) |
+| Barcode Scanner                     | Receipt                             | Profile                             |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| ![Scanner](screenshots/scanner.png) | ![Receipt](screenshots/receipt.png) | ![Profile](screenshots/profile.png) |
+
+### Sales History
+
+|                                           |                                            |
+| ----------------------------------------- | ------------------------------------------ |
+| ![Sales History](screenshots/history.png) | ![Sales History](screenshots/history2.png) |
 
 ---
 
