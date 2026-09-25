@@ -26,7 +26,6 @@ class SalesHistoryScreen extends StatelessWidget {
 }
 
 // Reusable body content (used inside HistoryScreen's TabBarView, with no
-// Scaffold/AppBar of its own, and also embedded in SalesHistoryScreen above).
 class SalesHistoryBody extends StatefulWidget {
   const SalesHistoryBody({super.key});
 

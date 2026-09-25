@@ -23,8 +23,6 @@ class ExpenseHistoryScreen extends StatelessWidget {
   }
 }
 
-// Reusable body content (used inside HistoryScreen's TabBarView, with no
-// Scaffold/AppBar of its own, and also embedded in ExpenseHistoryScreen above).
 class ExpenseHistoryBody extends StatefulWidget {
   const ExpenseHistoryBody({super.key});
 

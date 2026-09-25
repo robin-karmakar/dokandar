@@ -47,9 +47,7 @@ class AuthService {
     }
   }
 
-  // Changing a password is a "sensitive" operation, so Firebase requires
-  // the user to have signed in recently. We re-authenticate with their
-  // current password first, then set the new one.
+
   Future<String?> changePassword({
     required String currentPassword,
     required String newPassword,

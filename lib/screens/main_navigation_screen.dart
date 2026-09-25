@@ -8,8 +8,6 @@ import 'profile_screen.dart';
 import 'new_sale_screen.dart';
 
 // The main app shell shown after login: bottom navigation with 4 tabs
-// (Home, Products, History, Profile) and a floating "New Sale" button
-// docked in the center notch.
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});
 
@@ -20,10 +18,6 @@ class MainNavigationScreen extends StatefulWidget {
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _currentIndex = 0;
 
-  // A stable, mutable list (NOT a getter/computed property). Rebuilding
-  // this screen for unrelated reasons (like the keyboard opening/closing
-  // below) must NOT recreate these widgets, or ProfileScreen would rebuild
-  // mid-typing and show unsaved text live.
   late List<Widget> _tabs;
 
   @override
@@ -39,10 +33,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
 
   void _onNavTap(int index) {
     setState(() {
-      // Give ProfileScreen a fresh key only when the user actually
-      // navigates to it, so it reloads the latest saved data instead of
-      // keeping stale/unsaved text from a previous visit (IndexedStack
-      // normally keeps tabs alive forever).
+     // Refresh profile data when returning to the tab.
       if (index == 3) {
         _tabs[3] = ProfileScreen(key: UniqueKey());
       }

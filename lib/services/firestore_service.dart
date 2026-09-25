@@ -8,20 +8,20 @@ import '../models/cart_item.dart';
 class FirestoreService {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
-  // বর্তমান লগিন করা শপের uid
+  // Get current shop UID
   String get _shopId => FirebaseAuth.instance.currentUser!.uid;
 
   DocumentReference get _shopRef => _db.collection('shops').doc(_shopId);
 
-  // এই শপের products সাব-কালেকশনের রেফারেন্স
+ // Get products collection reference
   CollectionReference get _productsRef => _shopRef.collection('products');
 
-  // নতুন প্রোডাক্ট অ্যাড করা
+  // Add a new product
   Future<void> addProduct(Product product) async {
     await _productsRef.add(product.toMap());
   }
 
-  // সব প্রোডাক্টের লাইভ লিস্ট (Stream) পাওয়া
+  // Stream all products
   Stream<List<Product>> getProducts() {
     return _productsRef.snapshots().map((snapshot) {
       return snapshot.docs
@@ -30,7 +30,7 @@ class FirestoreService {
     });
   }
 
-  // বারকোড দিয়ে একটা প্রোডাক্ট খোঁজা
+  // Find product by barcode
   Future<Product?> getProductByBarcode(String barcode) async {
     final query = await _productsRef.where('barcode', isEqualTo: barcode).limit(1).get();
     if (query.docs.isEmpty) return null;
@@ -38,12 +38,12 @@ class FirestoreService {
     return Product.fromMap(doc.id, doc.data() as Map<String, dynamic>);
   }
 
-  // প্রোডাক্ট এডিট করা
+  // Edit product
   Future<void> updateProduct(String productId, Map<String, dynamic> data) async {
     await _productsRef.doc(productId).update(data);
   }
 
-  // প্রোডাক্ট ডিলিট করা
+  // Delete product
   Future<void> deleteProduct(String productId) async {
     await _productsRef.doc(productId).delete();
   }
@@ -137,7 +137,6 @@ class FirestoreService {
     }
 
     batch.commit().catchError((error) {
-      // ignore: avoid_print
       print('Invoice sync will retry when back online: $error');
     });
 

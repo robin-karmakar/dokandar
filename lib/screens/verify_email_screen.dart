@@ -39,10 +39,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
 
     if (refreshedUser != null && refreshedUser.emailVerified) {
       _timer?.cancel();
-      // Push a brand-new AuthGate and clear the whole navigation stack.
-      // A fresh AuthGate re-subscribes to authStateChanges(), which
-      // immediately replays the current (now verified) user, so it
-      // correctly shows HomeScreen this time.
+      
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (_) => const AuthGate()),
             (route) => false,

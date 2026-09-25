@@ -19,10 +19,8 @@ class DashboardScreen extends StatefulWidget {
 class _DashboardScreenState extends State<DashboardScreen> {
   final FirestoreService _firestoreService = FirestoreService();
 
-  // Cached once so any parent rebuild doesn't create new Stream
-  // instances and reset both StreamBuilders back to
-  // ConnectionState.waiting, which was flashing the whole dashboard
-  // (and briefly showing the empty states) on every rebuild.
+ // Cache streams to prevent parent rebuilds from resetting StreamBuilders
+ // and causing dashboard flickering or empty states.
   late final Stream<List<Invoice>> _invoicesStream;
   late final Stream<List<Expense>> _expensesStream;
 

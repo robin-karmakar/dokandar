@@ -13,7 +13,7 @@ class Product {
     required this.barcode,
   });
 
-  // Firestore থেকে ডেটা পড়ে Product অবজেক্ট বানানোর জন্য
+  // Creates a Product object from Firestore data.
   factory Product.fromMap(String id, Map<String, dynamic> data) {
     return Product(
       id: id,
@@ -24,7 +24,7 @@ class Product {
     );
   }
 
-  // Product অবজেক্ট থেকে Firestore-এ সেভ করার জন্য Map বানানোর জন্য
+  // Creates a Map from a Product object for saving to Firestore.
   Map<String, dynamic> toMap() {
     return {
       'name': name,

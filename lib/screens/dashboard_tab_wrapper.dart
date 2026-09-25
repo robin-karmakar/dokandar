@@ -6,8 +6,6 @@ import 'dashboard_screen.dart';
 import 'add_expense_screen.dart';
 import 'auth_gate.dart';
 
-// Wraps DashboardScreen with its own AppBar (shop name, logout,
-// verification banner) and a floating "Add Expense" button.
 class DashboardTabWrapper extends StatelessWidget {
   DashboardTabWrapper({super.key});
 

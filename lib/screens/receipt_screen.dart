@@ -13,7 +13,7 @@ class ReceiptScreen extends StatelessWidget {
 
   const ReceiptScreen({super.key, required this.invoice});
 
-  // PDF তৈরি করার ফাংশন
+  // Function to generate the PDF
   Future<Uint8List> _generatePdf(Map<String, dynamic> shopProfile) async {
     final pdf = pw.Document();
 
@@ -456,11 +456,11 @@ class ReceiptScreen extends StatelessWidget {
 class _ReceiptClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    const double zigWidth = 14
+    const double zigWidth = 14;
     final path = Path();
     path.lineTo(0, 0);
     path.lineTo(size.width, 0);
-    path.lineTo(size.width, size.height - 12);-ui
+    path.lineTo(size.width, size.height - 12);
 
     double x = size.width;
     bool toggle = true;
