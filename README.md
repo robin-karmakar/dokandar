@@ -10,7 +10,13 @@
 Small shop owners often manage their entire business using paper notebooks — tracking daily sales, expenses, and stock manually. **Dokandar** solves this by providing a simple, mobile-first point-of-sale (POS) and business management system that works even without a stable internet connection.
 
 ---
+## 📱 Download APK
 
+Download and install **Dokandar** on your Android device.
+
+[![Download APK](https://img.shields.io/badge/Download%20APK-v1.0.0-brightgreen?style=for-the-badge&logo=android)](https://github.com/robin-karmakar/dokandar/releases/latest/download/Dokandar-v1.0.0.apk)
+
+---
 ## ✨ Key Features
 
 ### Authentication & Security
