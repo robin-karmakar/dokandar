@@ -191,20 +191,25 @@ lib/
 
 ---
 
-## 🎓 Project Context
+## 🎯 Project Context
 
-This project was developed as an internship project to gain hands-on experience in Flutter application development, Firebase integration, offline data synchronization, POS workflows, inventory management, and PDF receipt generation.
+**Dokandar** is a Flutter-based shop management application designed to simplify daily business operations for small and medium-sized businesses.
+
+The application provides essential tools for managing **sales, inventory, expenses, products, customer receipts, and business records** from a single mobile platform. It also supports **offline data access and automatic synchronization** to help maintain smooth operation during temporary network interruptions.
+
+The project demonstrates the practical implementation of **Flutter, Firebase, POS workflows, inventory management, barcode scanning, offline data synchronization, and digital PDF receipt generation** in a real-world business application.
 
 ---
 
 ## 📄 License
 
-This project is shared for educational and portfolio purposes as part of an internship submission. All rights to reuse, modify, or distribute the code are reserved by the author unless otherwise stated.
+This project is independently developed and owned by the author. The author reserves the right to use, modify, distribute, and maintain this project for any personal, commercial, educational, or other lawful purpose.
 
 ---
 
 ## 👤 Author
 
-Developed by **[Robin Karmakar]**
-Flutter Developer | Internship Project
+Developed by **Robin Karmakar**
+Flutter Developer
 [GitHub Profile](https://github.com/robin-karmakar)
+
