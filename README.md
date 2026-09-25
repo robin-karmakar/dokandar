@@ -215,11 +215,7 @@ This project is independently developed and owned by the author. The author rese
 
 ## 👤 Author
 
-Developed by **Robin Karmakar**
-<<<<<<< HEAD
-Flutter Developer
-=======
-Flutter Developer|
->>>>>>> 71f1f87 (Update README)
+Developed by **Robin Karmakar**  
+Flutter Developer  
 [GitHub Profile](https://github.com/robin-karmakar)
 
