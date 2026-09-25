@@ -2,7 +2,6 @@
 
 **Dokandar** is a mobile shop management application built with Flutter and Firebase, designed for small and medium business owners to digitize their daily operations — tracking sales, managing inventory, monitoring expenses, and generating digital receipts, all from their smartphone.
 
-> Developed as part of an internship project.
 
 ---
 
