@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/product.dart';
 import '../services/firestore_service.dart';
+import 'barcode_scanner_screen.dart';
 
 class AddProductScreen extends StatefulWidget {
   const AddProductScreen({super.key});
@@ -20,15 +21,29 @@ class _AddProductScreenState extends State<AddProductScreen> {
   bool _isLoading = false;
   String? _errorMessage;
 
+  Future<void> _scanBarcode() async {
+    final scannedCode = await Navigator.push<String>(
+      context,
+      MaterialPageRoute(builder: (_) => const BarcodeScannerScreen()),
+    );
+
+    if (scannedCode != null) {
+      setState(() {
+        _barcodeController.text = scannedCode;
+      });
+    }
+  }
+
   Future<void> _handleAddProduct() async {
     final name = _nameController.text.trim();
     final priceText = _priceController.text.trim();
     final stockText = _stockController.text.trim();
     final barcode = _barcodeController.text.trim();
 
-    if (name.isEmpty || priceText.isEmpty || stockText.isEmpty || barcode.isEmpty) {
+    // Barcode is now optional — only name, price, and stock are required.
+    if (name.isEmpty || priceText.isEmpty || stockText.isEmpty) {
       setState(() {
-        _errorMessage = "Please fill all fields";
+        _errorMessage = "Please fill in name, price, and stock";
       });
       return;
     }
@@ -53,7 +68,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
       name: name,
       price: price,
       stock: stock,
-      barcode: barcode,
+      barcode: barcode, // stays empty string if left blank
     );
 
     await _firestoreService.addProduct(product);
@@ -105,9 +120,14 @@ class _AddProductScreenState extends State<AddProductScreen> {
               const SizedBox(height: 15),
               TextField(
                 controller: _barcodeController,
-                decoration: const InputDecoration(
-                  labelText: 'Barcode',
-                  prefixIcon: Icon(Icons.qr_code),
+                decoration: InputDecoration(
+                  labelText: 'Barcode (optional)',
+                  prefixIcon: const Icon(Icons.qr_code),
+                  suffixIcon: IconButton(
+                    icon: const Icon(Icons.qr_code_scanner),
+                    tooltip: 'Scan barcode',
+                    onPressed: _scanBarcode,
+                  ),
                 ),
               ),
               const SizedBox(height: 20),
@@ -122,12 +142,12 @@ class _AddProductScreenState extends State<AddProductScreen> {
               _isLoading
                   ? const Center(child: CircularProgressIndicator())
                   : ElevatedButton(
-                onPressed: _handleAddProduct,
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 15),
-                ),
-                child: const Text('Save Product'),
-              ),
+                      onPressed: _handleAddProduct,
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 15),
+                      ),
+                      child: const Text('Save Product'),
+                    ),
             ],
           ),
         ),
